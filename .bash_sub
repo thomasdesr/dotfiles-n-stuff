@@ -1,0 +1,37 @@
+function g+() { g++ $1 && ./a.out $2; }
+
+function g+++() { g++ -Wall -Weffc++ -pedantic  \
+    -pedantic-errors -Wextra  -Wall -Waggregate-return -Wcast-align \
+    -Wcast-qual  -Wchar-subscripts  -Wcomment -Wconversion \
+    -Wdisabled-optimization \
+    -Werror -Wfloat-equal  -Wformat  -Wformat=2 \
+    -Wformat-nonliteral -Wformat-security  \
+    -Wformat-y2k \
+    -Wimport  -Winit-self  -Winline \
+    -Winvalid-pch   \
+    -Wunsafe-loop-optimizations  -Wlong-long -Wmissing-braces \
+    -Wmissing-field-initializers -Wmissing-format-attribute   \
+    -Wmissing-include-dirs -Wmissing-noreturn \
+    -Wpacked  -Wpadded -Wparentheses  -Wpointer-arith \
+    -Wredundant-decls -Wreturn-type \
+    -Wsequence-point  -Wshadow -Wsign-compare  -Wstack-protector \
+    -Wstrict-aliasing -Wstrict-aliasing=2 -Wswitch  -Wswitch-default \
+    -Wswitch-enum -Wtrigraphs  -Wuninitialized \
+    -Wunknown-pragmas  -Wunreachable-code -Wunused \
+    -Wunused-function  -Wunused-label  -Wunused-parameter \
+    -Wunused-value  -Wunused-variable  -Wvariadic-macros \
+    -Wvolatile-register-var  -Wwrite-strings $1 && ./a.out $2; }
+
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+			man "$@"
+}
+
+function imgur () { URL=$1; DIR=imgur.`echo $URL | awk -Fa/ '{print $2}'`; mkdir $DIR; curl $URL 2>/dev/null \ |grep -E 'a href="(http\:\/\/i\.imgur\.com\/[a-zA-Z0-9]+\.jpg)' \ |awk -F\" '{print $2}' \ |xargs -P 4 wget -P $DIR 2>&1 \ |grep "HTTP.*\.\.\. (^200)" \ ; tar -cjf $DIR.tbz2 $DIR; rm -r $DIR; }

@@ -1,0 +1,16 @@
+alias ls='ls --color=auto'
+alias lsl='ls -lh --color=auto'
+alias lsa='ls -a --color=auto'
+alias lsal='ls -alh --color=auto'
+alias lsla='ls -alh --color=auto'
+
+alias 'cd..'='cd ..'
+alias tree='tree -C'
+
+alias vi=vim
+
+alias mpg123="mpg123 -C"
+
+alias shred="shred -zn 35"
+
+alias nc=ncat

@@ -1,0 +1,41 @@
+# basic settings... self explainatory
+deflogin on
+autodetach on
+startup_message off
+
+# the dash makes it a login shell
+defshell bash
+activity ""
+bell_msg ""
+vbell off
+vbell_msg ""
+defscrollback 8192
+nonblock on
+defutf8 on
+defbce on
+defflow off
+msgwait 1
+altscreen on
+
+#bindkey -k k1 select 1
+#bindkey -k k2 select 2
+#bindkey -k k3 select 3
+#bindkey -k k4 select 4
+#bindkey -k k5 select 5
+#bindkey -k k6 select 6
+#bindkey -k k7 select 7
+#bindkey -k k8 select 8
+#bindkey -k k9 select 9
+#bindkey -k k0 select 0
+
+#bindkey "^[Od" prev  # change window with ctrl-left
+#bindkey "^[Oc" next  # change window with ctrl-right
+
+screen -t "htop" 0 htop
+screen -t "bash" 1 bash
+
+term screen-256color
+terminfo rxvt-unicode ti@:te@:
+ 
+hardstatus alwayslastline "%{=}%-w%{+b w}%n %t%{-b w}%+w %=%c"
+
