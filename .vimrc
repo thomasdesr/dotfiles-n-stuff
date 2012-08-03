@@ -12,7 +12,7 @@ set expandtab
 
 set foldmethod=indent
 set foldnestmax=10
-set foldlevel=0
+set foldlevel=2
 set foldenable
 
 set listchars=tab:->,trail:·,extends:>,precedes:<
