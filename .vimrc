@@ -15,5 +15,5 @@ set foldnestmax=10
 set foldlevel=2
 set foldenable
 
-set listchars=tab:->,trail:·,extends:>,precedes:<
+set listchars=tab:->,trail:*,extends:>,precedes:<
 set list
