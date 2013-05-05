@@ -5,9 +5,9 @@
 	name = Thomaso
 	email = github@thomaso.otherinbox.com
 [alias]
-	history-all = "log --pretty=format:\"%C(yellow)%h %Creset%s%d [%an|%ad]\" --graph --date=short --all" 
-	history = "log --pretty=format:\"%C(yellow)%h %Creset%s%d [%an|%ad]\" --graph --date=short"
-	hist = "log --pretty=format:\"%C(yellow)%h %Creset%s%d [%an|%ad]\" --graph --date=short"
+	hist-all = "log --color --pretty=format:\"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)\" --relative-date --graph --decorate --all"
+	
+	hist = "log --color --pretty=format:\"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)\" --relative-date --graph --decorate"
 	b = branch
 	ba = branch -a
 	stat = status
